@@ -1,0 +1,97 @@
+<table>
+  <tr>
+    <td width="40%">
+      <br>
+      <div class="row log-in-box">
+        <div class="col col s12  m4  offset-m4 center">
+          <img class="circle responsive-img" width="200" height="200" src="/assets/iconDoc.png">
+        </div>
+      </div>
+    </td>
+
+
+    <td>
+      <br>
+      <div class="row log-in-box ">
+
+        <div class="row">
+          <div class="input-field col  s15  m4 l4 ">
+            <input id="IssueCode" [(ngModel)]="issueCode" [readonly]="mode === 'EDIT'" type="text" class="validate grey-text text-darken-1"
+              placeholder="Please input issue code">
+            <label for="issueCode">Issue Code</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <select class="browser-default col col s12  m10 l8 grey-text text-darken-1 " #selectCompName (change)="doOnchangeComp(selectCompName.value)"
+            [(ngModel)]="compName">
+              <option  value="" disabled selected>Choose Company</option>
+              <option *ngFor="let comp of companyData" [ngValue]="comp.compName" [value] = "comp.compName">{{comp.compName}}</option>
+            </select>
+        </div>
+
+        <div class="row">
+          <select class="browser-default col col s12  m10 l8 grey-text text-darken-1 " #selectCusName (change)="doOnchangeCus(selectCusName.value)"
+            [(ngModel)]="customerName">
+              <option  value="" disabled selected>Choose Customer</option>
+              <option *ngFor="let cus of customerData" [ngValue]="cus.customerName" [value] = "cus.customerName">{{cus.customerName}}</option>
+            </select>
+        </div>
+
+        <div class="row log-in-box">
+          <form action="#">
+
+            <label class="grey-text text-darken-1">Status :  </label>
+
+            <input name="group1" type="radio" id="inProcess" />
+            <label for="inProcess">In Process</label>
+
+            <input name="group1" type="radio" id="complete"  />
+            <label for="complete">Complete</label>
+
+            <input name="group1" type="radio" id="delete"  />
+            <label for="delete">Delete</label>
+
+          </form>
+        </div>
+
+        <div class="row">
+          <form class=" col s12  m10 l8">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="Issuedetail" class="materialize-textarea grey-text text-darken-1" [(ngModel)]="issueDetail" type="textarea"></textarea>
+                <label for="issueDetail">Issue Detail</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="col s6  m5 l4 grey-text text-darken-1">
+            <input id="issueDate" type="date" [(ngModel)]="issueDate" />
+          </div>
+          <div>
+            <form action="#">
+              <div class="file-field input-field ">
+                <div class="file-path-wrapper  col s5  m4 l3">
+                  <input id="file" class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+                <div class="btn  blue-grey lighten-5">
+                  <span class=" grey-text text-darken-1">File</span>
+                  <input type="file" multiple>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <br>
+        <a class="waves-effect waves-light btn col col s12  m10 l8   teal darken-4" (click)="onSave();">save</a>
+        
+      </div>
+
+
+    </td>
+  </tr>
+</table>

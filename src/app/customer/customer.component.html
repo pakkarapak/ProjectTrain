@@ -1,0 +1,63 @@
+<table>
+  <tr>
+    <td width="40%">
+      <br><br>
+      <div class="row log-in-box">
+        <div class="col col s12  m4  offset-m4 center">
+          <img class="circle responsive-img" width="200" height="200" src="/assets/iconCus1.png">
+        </div>
+      </div>
+    </td>
+
+
+    <td>
+      <br><br><br>
+      <div class="row log-in-box ">
+
+        <div class="row">
+          <div class="input-field col  col s12  m4 l4  ">
+            <input id="Customer Code" [(ngModel)]="cusCode" [readonly]="mode === 'EDIT'" type="text" class="validate grey-text text-darken-1"
+              minlength="1" placeholder="Please input customer code">
+            <label for="cusCode" data-error="Please input customer code">Customer Code</label>
+          </div>
+
+          <div class="input-field col   col s12  m4 l4   ">
+            <input id="Customer Name" [(ngModel)]="cusName" type="text" class="validate grey-text text-darken-1" minlength="1" placeholder="Please input customer name">
+            <label for="cusName" data-error="Please input customer name">Customer Name</label>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="input-field col col s12  m10 l8  ">
+            <input id="Phone" [(ngModel)]="phone" type="text" class="validate grey-text text-darken-1" placeholder="Please input phone number">
+            <label for="phone">Phone Number</label>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="input-field col  col s12  m10 l8  ">
+            <input id="Email" [(ngModel)]="email" type="text" class="validate grey-text text-darken-1" placeholder="Please input email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <select class="browser-default col col s12  m10 l8 grey-text text-darken-1 " #selectValue [(ngModel)]="compName" (change)="doSomething(selectValue.value)">
+              <option  value="" disabled selected [ngValue]="">Choose Company</option>
+              <option *ngFor="let comp of companyData" [ngValue]="comp.compName"[value] = "comp.compName" >{{comp.compName}}</option>
+            </select>
+        </div>
+
+        <br>
+        <a class="waves-effect waves-light btn col col s12  m10 l8  blue-grey" (click)="onSave();">save</a>
+
+      </div>
+
+
+    </td>
+  </tr>
+</table>

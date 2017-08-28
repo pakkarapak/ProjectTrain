@@ -1,0 +1,29 @@
+
+<div class="row log-in-box">
+  <div class="col col s12  m4  offset-m4 center">
+    <img class="circle responsive-img" width="150" height="150" src="/assets/iconLogin2.png">
+  </div>
+</div>
+
+<div class="row ">
+  <div class="row">
+    <div class="input-field col s12  m4  offset-m4">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="email" [(ngModel)]="email" type="email" class="validate  cyan-text text-darken-1" placeholder="Please input your email">
+      <label for="email" data-error="Please input valid email." >Email</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col  col s12  m4  offset-m4">
+      <i class="material-icons prefix">lock</i>
+      <input id="password"[(ngModel)]="password" type="password" class="validate  cyan-text text-darken-1"
+      pattern="\d{3,8}"
+      placeholder="Please input your password">
+      <label for="password">Password</label>
+    </div>
+  </div>
+  <br>
+  <a class="waves-effect waves-light btn col col s12  m4  offset-m4  teal darken-3"(click)="doLogin()">Log in</a>
+
+</div>
